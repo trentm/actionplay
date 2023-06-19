@@ -28,7 +28,7 @@ jobs:
       - name: dothestep
         env:
           FOO: bar
-          # FLAG: ${{ secrets.TheFlag }}
+          FLAG: ${{ secrets.TheFlag }}
         run: make all
 
 
