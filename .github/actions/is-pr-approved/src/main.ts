@@ -101,6 +101,8 @@ async function checkPRReviewed(octokit: InstanceType<typeof GitHub>, context: Co
           ['MEMBER', 'OWNER', 'COLLABORATOR'].includes(review.author_association)
         )
       })
+      console.log('XXX reviews: ', reviews)
+      console.log('XXX approvedReviews: ', approvedReviews)
 
       // A trusted user has allowed the PR with the specific commit
       if (approvedReviews.length > 0) return true
