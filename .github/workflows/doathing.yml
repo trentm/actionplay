@@ -1,0 +1,34 @@
+name: doathing
+
+on:
+  pull_request_target:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  isapproved:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: trentm/actionsplay/.github/actions/is-pr-approved@main
+  dothething:
+    needs:
+      - isapproved
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: dothestep
+        env:
+          FOO: bar
+          # FLAG: ${{ secrets.TheFlag }}
+        run: make all
+
+
