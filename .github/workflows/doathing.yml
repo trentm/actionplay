@@ -19,6 +19,8 @@ jobs:
       pull-requests: read
     steps:
       - uses: trentm/actionplay/.github/actions/is-pr-approved@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
   dothething:
     needs:
       - isapproved
