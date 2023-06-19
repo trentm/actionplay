@@ -1,0 +1,30 @@
+{
+  "name": "is-pr-approved",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Is PR Approved",
+  "main": "lib/main.js",
+  "scripts": {
+    "check": "checkIsUnchanged ./dist/index.js",
+    "package": "ncc build src/index.ts -o dist --source-map --license licenses.txt",
+    "all": "npm run package && npm test"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "node",
+    "typescript"
+  ],
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.0.0",
+    "@octokit/core": "^3.5.1",
+    "@octokit/plugin-request-log": "^1.0.4",
+    "@octokit/plugin-retry": "^3.0.9",
+    "@octokit/rest": "^19.0.7",
+    "github-actions-utils": "^1.0.9"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.36.1"
+  }
+}
