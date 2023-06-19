@@ -9962,6 +9962,7 @@ function checkPRReviewed(octokit, context) {
     return __awaiter(this, void 0, void 0, function* () {
         // Get repository information from the environment
         const repository = context.repo;
+        console.log('XXX context: ', context);
         // This use case shouldn't exist since we support only `pull_request` and `pull_request_target` events
         // We still need to check if the pull request id is defined
         const pullRequestId = ((_a = context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.number) || -1;

@@ -71,6 +71,7 @@ export async function run(): Promise<void> {
 async function checkPRReviewed(octokit: InstanceType<typeof GitHub>, context: Context): Promise<boolean> {
   // Get repository information from the environment
   const repository = context.repo
+  console.log('XXX context: ', context)
 
   // This use case shouldn't exist since we support only `pull_request` and `pull_request_target` events
   // We still need to check if the pull request id is defined
