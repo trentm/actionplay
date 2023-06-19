@@ -18,7 +18,7 @@ jobs:
       contents: read
       pull-requests: read
     steps:
-      - uses: trentm/actionsplay/.github/actions/is-pr-approved@main
+      - uses: trentm/actionplay/.github/actions/is-pr-approved@main
   dothething:
     needs:
       - isapproved
