@@ -42,9 +42,13 @@ export async function run(): Promise<void> {
 
     // Perform all checks
     const isKnownActor = checkKnownActor(github.context.actor)
+    console.log('XXX isKnownActor: ', isKnownActor)
     const userHasPermission = await checkActorPermission(octokit, github.context)
+    console.log('XXX userHasPermission: ', userHasPermission)
     const isMemberOfOrg = await checkMemberOfOrg(octokit, github.context)
+    console.log('XXX isMemberOfOrg: ', isMemberOfOrg)
     const isPRReviewed = await checkPRReviewed(octokit, github.context)
+    console.log('XXX isPRReviewed: ', isPRReviewed)
 
     // Compute approval in order
     const isPRApproved = isKnownActor || userHasPermission || isMemberOfOrg || isPRReviewed

@@ -7,7 +7,7 @@
   "scripts": {
     "check": "checkIsUnchanged ./dist/index.js",
     "package": "ncc build src/index.ts -o dist --source-map --license licenses.txt",
-    "all": "npm run package && npm test"
+    "all": "npm run package"
   },
   "keywords": [
     "github",
@@ -25,6 +25,8 @@
     "github-actions-utils": "^1.0.9"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.36.1"
+    "@types/node": "^20.3.1",
+    "@vercel/ncc": "^0.36.1",
+    "typescript": "^5.1.3"
   }
 }
