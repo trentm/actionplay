@@ -1,2 +1,2 @@
 hi
-hi from hamish 1
+hi from hamish 2
